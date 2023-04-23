@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import { Form } from "./components/Form";
+import { Table } from "./components/Table/Table";
+import { useState } from "react";
 
 function App() {
+  const Todos = JSON.parse(localStorage.getItem("todos")) || [];
+  let [todos, setTodos] = useState(Todos);
+
+  const ckeck = (id) => {
+    let ckeckTodo = todos.find((todo) => todo.id === id);
+    ckeckTodo.fulfilled = !checkTodo.fulfilled;
+    setTodos([...todos]);
+    localStorage.setItem("todos", JSON.stringify(todos));
+  };
+
+  const removeTodo = (index) => {
+    let newTodo = todos.filter((todo, i) => i !== index);
+    setTodos(newTodo);
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Form todos={todos} setTodos={setTodos} />
+      <Table todos={todos} removeTodo={removeTodo} ckeck={ckeck} />
+    </>
   );
 }
 
