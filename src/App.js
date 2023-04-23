@@ -6,9 +6,9 @@ function App() {
   const Todos = JSON.parse(localStorage.getItem("todos")) || [];
   let [todos, setTodos] = useState(Todos);
 
-  const ckeck = (id) => {
-    let ckeckTodo = todos.find((todo) => todo.id === id);
-    ckeckTodo.fulfilled = !checkTodo.fulfilled;
+  const check = (id) => {
+    let checkTodo = todos.find((todo) => todo.id === id);
+    checkTodo.fulfilled = !checkTodo.fulfilled;
     setTodos([...todos]);
     localStorage.setItem("todos", JSON.stringify(todos));
   };
@@ -20,7 +20,7 @@ function App() {
   return (
     <>
       <Form todos={todos} setTodos={setTodos} />
-      <Table todos={todos} removeTodo={removeTodo} ckeck={ckeck} />
+      <Table todos={todos} removeTodo={removeTodo} check={check} />
     </>
   );
 }

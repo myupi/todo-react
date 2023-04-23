@@ -17,7 +17,6 @@ export function Form({ todos, setTodos }){
     todo.value = null
   }
   localStorage.setItem("todos", JSON.stringify(todos))
-  console.log(todos);
   return <section>
     <div className="container my-4">
       <form className="d-flex align-items-center justify-content-center gap-2" onSubmit={Submit}>
