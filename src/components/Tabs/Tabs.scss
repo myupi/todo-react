@@ -1,0 +1,50 @@
+div.Tabs {
+  display: none;
+  min-height: 173px;
+  max-height: 200px;
+  padding: 24px;
+  background-color: #fff;
+  flex: 1;
+  gap: 8px;
+  border-radius: 10px;
+  button {
+    padding: 5px 16px;
+    background: #f2f4ff;
+    border-radius: 10px;
+    border: 0;
+    color: #4661e6;
+    font-weight: 600;
+    font-size: 13px;
+    transition: 0.3s linear;
+    &:hover {
+      background: #cfd7ff;
+    }
+    &:active {
+      background: #4661e6;
+      color: white;
+    }
+  }
+  select {
+    padding: 5px 5px;
+    background: #f2f4ff;
+    border-radius: 10px;
+    border: 0;
+    color: #4661e6;
+    font-weight: 600;
+    font-size: 13px;
+    transition: 0.3s linear;
+    &:hover {
+      background: #cfd7ff;
+    }
+    &:active {
+      background: #4661e6;
+      color: white;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  div.Tabs {
+    display: flex;
+  }
+}

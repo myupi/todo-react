@@ -1,27 +1,14 @@
-import { Form } from "./components/Form";
-import { Table } from "./components/Table/Table";
-import { useState } from "react";
-
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Tablet, PageAdd, PageEdit } from "./pages";
+import { Route, Routes } from "react-router-dom";
+import "./App.scss";
 function App() {
-  const Todos = JSON.parse(localStorage.getItem("todos")) || [];
-  let [todos, setTodos] = useState(Todos);
-
-  const check = (id) => {
-    let checkTodo = todos.find((todo) => todo.id === id);
-    checkTodo.fulfilled = !checkTodo.fulfilled;
-    setTodos([...todos]);
-    localStorage.setItem("todos", JSON.stringify(todos));
-  };
-
-  const removeTodo = (index) => {
-    let newTodo = todos.filter((todo, i) => i !== index);
-    setTodos(newTodo);
-  };
   return (
-    <>
-      <Form todos={todos} setTodos={setTodos} />
-      <Table todos={todos} removeTodo={removeTodo} check={check} />
-    </>
+    <Routes>
+      <Route path="/" element={<Tablet />} />
+      <Route path="/addFeedback" element={<PageAdd />} />
+      <Route path="/editFeedback" element={<PageEdit />} />
+    </Routes>
   );
 }
 

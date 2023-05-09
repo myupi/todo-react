@@ -1,0 +1,41 @@
+section#sugMob {
+  background-color: #373f68;
+  .container {
+    padding-block: 8px;
+    div {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      span {
+        color: #f2f4fe;
+        opacity: 0.75;
+        font-size: 14px;
+      }
+      select {
+        background-color: inherit;
+        color: white;
+        border: 0;
+      }
+    }
+    button {
+      padding: 12px 25px;
+      border: 0;
+      background: #c75af6;
+      color: #f2f4fe;
+      font-weight: 700;
+      font-size: 14px;
+      border-radius: 10px;
+      transition: 0.3s linear;
+
+      &:hover {
+        opacity: 0.75;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  section#sugMob {
+    display: none;
+  }
+}

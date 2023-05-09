@@ -1,0 +1,38 @@
+div.Roadmap {
+  display: none;
+  flex: 1;
+  gap: 20px;
+  background-color: white;
+  color: black;
+  padding: 24px;
+  max-height: 173px;
+  border-radius: 10px;
+  h2 {
+    font-weight: 700;
+    font-size: 18px;
+    color: #3a4374;
+  }
+  ul {
+    li {
+      position: relative;
+      span {
+        font-weight: 700;
+        font-size: 16px;
+        color: #647196;
+      }
+      &::before {
+        content: "•";
+        color: red;
+        left: -20px;
+        font-size: 20px;
+        position: absolute;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  div.Roadmap {
+    display: flex;
+  }
+}
